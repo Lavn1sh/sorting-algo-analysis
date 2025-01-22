@@ -1,11 +1,13 @@
 use std::io::{self, Write};
 
+// Enum representing the order in which to sort the array.
 #[derive(Debug, PartialEq)]
 enum SortOrder {
     Ascending,
     Descending,
 }
 
+// Struct to hold the array and the step count for sorting.
 #[derive(Debug)]
 struct SortContext {
     arr: Vec<i32>,
@@ -13,12 +15,17 @@ struct SortContext {
 }
 
 impl SortContext {
+    // Implements a new function which creates a new SortContext
+    // The new SortContext takes the array and sets the step count to 0
     fn new(arr: Vec<i32>) -> Self {
         Self { arr, step_count: 0 }
     }
 }
 
 // Bubble sort function
+// takes in SortContext(containing array and step_count) and sorting order as params
+// We increase the step count in case of any assignments or comparisons.
+// We sort differently depending on whether we have Ascending or Descending SortOrder
 fn bubble_sort(context: &mut SortContext, order: &SortOrder) {
     let n = context.arr.len();
     for i in (1..n).rev() {
@@ -43,6 +50,9 @@ fn bubble_sort(context: &mut SortContext, order: &SortOrder) {
 }
 
 // Selection sort function
+// takes in SortContext(containing array and step_count) and sorting order as params
+// We increase the step count in case of any assignments or comparisons.
+// We sort differently depending on whether we have Ascending or Descending SortOrder
 fn selection_sort(context: &mut SortContext, order: &SortOrder) {
     let n = context.arr.len();
     for i in 0..n - 1 {
@@ -66,6 +76,9 @@ fn selection_sort(context: &mut SortContext, order: &SortOrder) {
 }
 
 // Insertion sort function
+// takes in SortContext(containing array and step_count) and sorting order as params
+// We increase the step count in case of any assignments or comparisons.
+// We sort differently depending on whether we have Ascending or Descending SortOrder
 fn insertion_sort(context: &mut SortContext, order: &SortOrder) {
     let n = context.arr.len();
     for i in 1..n {
@@ -84,6 +97,10 @@ fn insertion_sort(context: &mut SortContext, order: &SortOrder) {
 }
 
 // Analyze step count for all algorithms
+// As parameter we have sort_fn which is the sorting function that we want to analyse
+// input_sizes takes in the input size of the array
+// algorithm_name is a string where we specify which sorting algorithm to be applied
+// order is the SortOrder that will either be Ascending or Descending
 fn analyze_step_count(
     sort_fn: fn(&mut SortContext, &SortOrder),
     input_sizes: &[usize],
@@ -104,6 +121,7 @@ fn analyze_step_count(
     println!("---------------------------------------------------------------------");
 
     for &size in input_sizes {
+        // We are looping through every input size and then doing the following analysing on each of them
         // Best Case (sorted array)
         let best_case_input: Vec<i32> = (0..size as i32).collect();
         let mut best_case_context = SortContext::new(best_case_input);
@@ -233,6 +251,7 @@ fn test_custom_array() {
         let mut insertion_context = SortContext::new(custom_array.clone());
         insertion_sort(&mut insertion_context, &SortOrder::Ascending);
 
+        // Descending Step Counts
         let mut bubble_context_desc = SortContext::new(custom_array.clone());
         bubble_sort(&mut bubble_context_desc, &SortOrder::Descending);
 
