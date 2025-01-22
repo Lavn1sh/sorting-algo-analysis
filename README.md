@@ -13,14 +13,23 @@ Here, I have analysed **Selection Sort**, **Bubble Sort** and **Insertion Sort**
 
 - You also need matplotlib to visualise the graphs. You can get it by just running `pip install matplotlib` in your terminal for a global matplotlib install or you can set up a virtual environment and then install it. You can also use any other system package manager to install matplotlib in case your machine uses any other global package manager to keep things in sync.
 
+- Clone the repository with `git clone https://github.com/Lavn1sh/sorting-algo-analysis.git`.
+- `cd` into the sorting-algo-anaylysis directory.
+
 - Run `cargo run` in the project directory and you will get the analysis. Then to test on a custom array, press _y_ and then enter the number of items you want in array and then type the array elements separated by spaces and press enter. You will get your full analysis.
 
 - To get the graphs, run `python sorting_graph.py`.
 
 ## Screenshots
 
-- ###Output example :
+- ### Output example :
   ![Output-01](screenshots/output-01.jpg) ![Output-02](screenshots/output-02.jpg)
-- ###Graphs :
+- ### Graphs :
   ![Ascending Order Graph](screenshots/graph_ascending.jpg)
   ![Descending Order Graph](screenshots/graph_descending.jpg)
+
+## Future Improvements to be made
+
+- [ ] Add more sorting algorithms to analyze
+- [ ] Render graphs dynamically directly from the Rust.
+- [ ] A better UI
