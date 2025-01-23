@@ -29,7 +29,7 @@ in the project directory and you will get the analysis. Then to test on a custom
 - To get the graphs, run 
 ```bash
 python sorting_graph.py
-```.
+```
 
 ## Screenshots
 
