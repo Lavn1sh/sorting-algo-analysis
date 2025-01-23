@@ -11,19 +11,23 @@ Here, I have analysed **Selection Sort**, **Bubble Sort** and **Insertion Sort**
   To get python, either use a package manager or check out
   https://python.org/downloads/ for installation.
 
-- You also need matplotlib to visualise the graphs. You can get it by just running ```bash
+- You also need matplotlib to visualise the graphs. You can get it by just running
+```bash
 pip install matplotlib
-``` 
+```
 in your terminal for a global matplotlib install or you can set up a virtual environment and then install it. You can also use any other system package manager to install matplotlib in case your machine uses any other global package manager to keep things in sync.
 
 - Clone the repository with `git clone https://github.com/Lavn1sh/sorting-algo-analysis.git`.
 - ``cd`` into the sorting-algo-anaylysis directory.
 
-- Run ```bash
+- Run 
+```bash
 cargo run
-``` in the project directory and you will get the analysis. Then to test on a custom array, press _y_ and then enter the number of items you want in array and then type the array elements separated by spaces and press enter. You will get your full analysis.
+``` 
+in the project directory and you will get the analysis. Then to test on a custom array, press _y_ and then enter the number of items you want in array and then type the array elements separated by spaces and press enter. You will get your full analysis.
 
-- To get the graphs, run ```bash
+- To get the graphs, run 
+```bash
 python sorting_graph.py
 ```.
 
